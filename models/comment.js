@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
-
-mongoose.model('User',{
+mongoose.model('Comment',{
     name: String,
     username: {
      type:String,
      required: true,
      unique: true,
      validate(value){
-       return value.length > 4;//value.includes('@') && value.length > 2;
+       return value.includes('@') && value.length > 2;
      },
     },
     password: String,

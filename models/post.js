@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 mongoose.model('Post', {
-    title: String,
-    picture: String,
+    title:{
+        type: String,
+        required: true
+    }, 
+    image: String,
     user: {
         type: mongoose.Types.ObjectId,
         ref: 'User'

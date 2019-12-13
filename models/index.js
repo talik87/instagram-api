@@ -13,11 +13,13 @@
 
 //now with mongoose:
 const mongoose = require('mongoose');
+const {mongoUri} = require('../config')
 mongoose
-.connect("mongodb://heroku_dd3wjrzb:4ls2fgqf66ho2gngus1q9df3eu@ds349628.mlab.com:49628/heroku_dd3wjrzb", {useNewUrlParser: true, useUnifiedTopology: true})
+.connect(mongoUri, {useNewUrlParser: true, useUnifiedTopology: true})
 .catch(()=> process.exit(1))
 
 require('./user');
 require('./post');
+require('./comment');
 
 
